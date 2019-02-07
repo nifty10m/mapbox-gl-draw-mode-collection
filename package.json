@@ -2,10 +2,20 @@
   "name": "mapbox-gl-draw-stamp-mode",
   "version": "1.0.0",
   "description": "A custom mode for MapboxGL Draw to stamp polygons with a drawn polygon",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "sroettering",
-  "license": "MIT"
+  "author": "Sven Röttering",
+  "license": "MIT",
+  "repository": "github:nifty10m/mapbox-gl-draw-stamp-mode",
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.1.1",
+    "@turf/difference": "^6.0.2",
+    "@turf/flatten": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
+    "@turf/intersect": "^6.1.3",
+    "@turf/rewind": "^5.1.5",
+    "@turf/truncate": "^6.0.1"
+  }
 }
