@@ -1,0 +1,11 @@
+{
+  "name": "mapbox-gl-draw-stamp-mode",
+  "version": "1.0.0",
+  "description": "A custom mode for MapboxGL Draw to stamp polygons with a drawn polygon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sroettering",
+  "license": "MIT"
+}
