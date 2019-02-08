@@ -31,16 +31,23 @@ Mapbox GL Draw Rotate Mode
     var geojson = {"type": "FeatureCollection","features": [{"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[-42.890625,59.355596110016315],[-52.03125,52.908902047770255],[-43.59375,25.799891182088334],[-29.8828125,16.636191878397664],[-13.7109375,17.644022027872726],[11.6015625,32.24997445586331],[18.28125,47.754097979680026],[-1.0546875,58.99531118795094],[-21.796875,61.60639637138628],[-42.890625,59.355596110016315]]]}},{"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[-61.87499999999999,56.75272287205736],[-69.60937499999999,38.8225909761771],[-62.22656249999999,30.44867367928756],[-46.05468749999999,32.54681317351514],[-35.859375,39.639537564366684],[-37.265625,52.482780222078226],[-39.0234375,60.930432202923335],[-41.1328125,65.2198939361321],[-58.35937499999999,59.355596110016315],[-61.87499999999999,57.89149735271034],[-61.87499999999999,56.75272287205736]]]}}]};
 
     var draw = new MapboxDraw({
-       defaultMode: 'simple_select',
-       modes: Object.assign({
-         StampMode: StampMode,
-       }, MapboxDraw.modes),
+        defaultMode: 'simple_select',
+        modes: Object.assign({
+            'stamp': stampMode.default,
+        }, MapboxDraw.modes),
     });
     map.addControl(draw);
 
-    map.on('load',function() {
-      // TODO: add geojson to map
-      draw.changeMode('stamp');
+    map.on('load', function () {
+        var url = "https://github.com/nifty10m/mapbox-gl-draw-stamp-mode/blob/master/docs/germany.geojson";
+        map.addSource('germany', { type: 'geojson', data: url });
+        map.addLayer({
+            id: 'germany',
+            source: 'germany',
+            type: 'line'
+        });
+        // TODO: add geojson to map
+        draw.changeMode('stamp');
     })
 
     </script>
