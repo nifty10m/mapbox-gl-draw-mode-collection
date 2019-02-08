@@ -18,7 +18,7 @@ Mapbox GL Draw Rotate Mode
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
-    <script type="text/javascript" src='https://github.com/nifty10m/mapbox-gl-draw-stamp-mode/blob/master/dist/modes/stamp-mode.js'></script>
+    <script type="text/javascript" src='https://github.com/nifty10m/mapbox-gl-draw-stamp-mode/blob/master/dist/modes/stamp-mode.js' crossorigin="anonymous"></script>
 
     <script type="text/javascript">
 
