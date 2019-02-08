@@ -4,7 +4,7 @@
   "description": "A custom mode for MapboxGL Draw to stamp polygons with a drawn polygon",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src -d dist && cp -r ./dist ./docs/dist"
+    "build": "browserify src/modes/stamp-mode.js --standalone StampMode > dist/modes/stamp-mode.min.js && cp -r ./dist ./docs"
   },
   "author": "Sven Röttering",
   "license": "MIT",
@@ -19,8 +19,6 @@
     "@turf/truncate": "^6.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1"
+    "browserify": "^16.2.3"
   }
 }
