@@ -39,7 +39,7 @@ Mapbox GL Draw Rotate Mode
     map.addControl(draw);
 
     map.on('load', function () {
-        var url = "https://github.com/nifty10m/mapbox-gl-draw-stamp-mode/blob/master/docs/germany.geojson";
+        var url = "https://nifty10m.github.io/mapbox-gl-draw-stamp-mode/germany.geojson";
         map.addSource('germany', { type: 'geojson', data: url });
         map.addLayer({
             id: 'germany',
