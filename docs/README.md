@@ -44,7 +44,11 @@ Mapbox GL Draw Rotate Mode
         map.addLayer({
             id: 'germany',
             source: 'germany',
-            type: 'line'
+            type: 'line',
+            paint: {
+              'line-color': '#ffffff',
+              'line-width': 3
+            }
         });
         // TODO: add geojson to map
         draw.changeMode('stamp');
