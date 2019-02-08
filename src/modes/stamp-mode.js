@@ -1,5 +1,4 @@
-import * as MapboxDraw from '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw';
-import { stamp } from './util/stamp';
+import { stamp } from '../util/stamp';
 
 const doubleClickZoom = {
     enable(ctx) {
@@ -26,11 +25,11 @@ const doubleClickZoom = {
     }
 };
 
-export const StampingMode = { ...MapboxDraw.modes['draw_polygon'] };
+const StampMode = MapboxDraw.modes['draw_polygon'];
 
 const originalSetup = MapboxDraw.modes['draw_polygon'].onSetup;
 
-StampingMode.onSetup = function(options) {
+StampMode.onSetup = function(options) {
     if (!options.baseFeatureCollection || !options.baseFeatureCollection.features.length) {
         throw new Error('Stamping mode requires something to stamp on');
     }
@@ -39,7 +38,7 @@ StampingMode.onSetup = function(options) {
     return originalSetup.apply(this, options);
 };
 
-StampingMode.onStop = function(state) {
+StampMode.onStop = function(state) {
     this.updateUIClasses({ mouse: 'none' });
     doubleClickZoom.enable(this);
     this.activateUIButton();
@@ -70,3 +69,5 @@ StampingMode.onStop = function(state) {
         this.changeMode('simple_select', {}, { silent: true });
     }
 };
+
+export default StampMode;
