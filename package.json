@@ -4,7 +4,7 @@
   "description": "A custom mode for MapboxGL Draw to stamp polygons with a drawn polygon",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src -d dist"
+    "build": "babel src -d dist && cp -r ./dist ./docs/dist"
   },
   "author": "Sven Röttering",
   "license": "MIT",
