@@ -3,6 +3,10 @@ Mapbox GL Draw Mode Collection
 
 This mode collection implements some useful modes for splitting and transforming polygons.
 
+If you find any bugs or want to improve something, feel free to submit a PR or open an issue.
+
+Demo: https://nifty10m.github.io/mapbox-gl-draw-mode-collection/
+
 Installation
 ------------
 
