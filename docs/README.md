@@ -115,7 +115,7 @@ Mapbox GL Draw Mode Collection
               });
           });
 
-          map.on('draw.update', function(event) {
+          map.on('draw.transform', function(event) {
               map.getSource('mode-collection-features').setData({
                   type: 'FeatureCollection',
                   features: event.features,
