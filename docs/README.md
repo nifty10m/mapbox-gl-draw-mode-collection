@@ -10,9 +10,26 @@ Mapbox GL Draw Mode Collection
         color: black;
         border: thin black solid;
     }
+    #map {
+        margin-bottom: 10px;
+        width: 100%;
+        height: 400px;
+    }
+    button {
+        line-height: 34px;
+        font-size: 14px;
+        padding: 0 20px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: #267CB9;
+        color: white;
+        border-radius: 4px;
+        font-weight: lighter;
+    }
 </style>
 <div>
-    <div id="map" style="width:100%;height:400px;"></div>
+    <div id="map"></div>
     <button id="stamp-btn">Stamp mode</button>
     <button id="transform-btn">Transform mode</button>
 
