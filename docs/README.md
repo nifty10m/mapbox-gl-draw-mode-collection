@@ -55,6 +55,7 @@ Mapbox GL Draw Mode Collection
           displayControlsDefault: false,
           controls: {
               polygon: true,
+              trash: true,
           },
           modes: Object.assign({
               'stamp': ModeCollection.StampMode,
@@ -130,7 +131,7 @@ Mapbox GL Draw Mode Collection
  </div>
 
 
-This implements a rotation mode in GL Draw. Module is still in active development.
+This mode collection implements some useful modes for splitting and transforming polygons.
 
 Installation
 ------------
@@ -138,9 +139,9 @@ Installation
 ### npm
 
 ```
-npm install mapbox-gl-draw-rotate-mode
+npm install @nifty10m/mapbox-gl-draw-mode-collection
 
-import RotateMode from 'mapbox-gl-draw-rotate-mode';
+import { StampMode, TransformMode } from '@nifty10m/mapbox-gl-draw-mode-collection';
 ```
 
 ### browser
@@ -148,7 +149,7 @@ import RotateMode from 'mapbox-gl-draw-rotate-mode';
 Get the js file from the `dist/` folder and include in your project.
 
 ```
-<script type="text/javascript" src="mapbox-gl-draw-rotate-mode.js"></script>
+<script type="text/javascript" src="mode-collection.min.js"></script>
 ```
 
 ## Usage
@@ -157,42 +158,40 @@ Ensure you are loading draw onto your map as a control before triggering `change
 
 ```
 var draw = new MapboxDraw(
- defaultMode: 'RotateMode'
  modes: Object.assign(
-   RotateMode: RotateMode
+   'stamp': ModeCollection.StampMode,
+   'transform': ModeCollection.TransformMode,
  }, MapboxDraw.modes)
 });
 
 map.addControl(draw);
 
 /*
-After load, or on events, activate or deactivate rotation:
+Activate the stamp mode with a base feature collection that should be stamped/split with a hand drawn polygon
 */
 
-draw.changeMode('RotateMode');
-draw.changeMode('simple_select');
+draw.changeMode('stamp', {
+  baseFeatureCollection: someFeatureCollection
+});
+
+/*
+Activate the transform mode with an array of feature IDs that are added to draw
+*/
+
+var featureIds = draw.set(someFeatureCollection);
+draw.changeMode('transform', {
+  featureIds: featureIds,
+  boundary: someBoundary // optional,
+});
 ```
 
 ## Events
 
-Mapbox GL Draw Rotate Mode offers you a few events. Redefine these as you need.
+### StampMode
 
-```
-RotateMode.rotatestart = function(selectedFeature,originalCenter) {
-  console.log('ROTATESTART');
-  console.log('feature: ',selectedFeature);
-  console.log('center: ',originalCenter);
-}
+* draw.stamped: emits the resulting split features as polygons
+* draw.error: emits if an error occured during stamp mode
 
-RotateMode.rotating = function(selectedFeature,originalCenter,lastMouseDown) {
-  console.log('ROTATING');
-  console.log('feature: ',selectedFeature);
-  console.log('center: ',originalCenter);
-  console.log('lastMouseDown: ',lastMouseDown);
-}
+### TransformMode
 
-RotateMode.rotateend = function(selectedFeature) {
-  console.log('ROTATEEND');
-  console.log('feature: ',selectedFeature);
-}
-```
+* draw.transform: emits all features that are added to draw after the transformation was applied
