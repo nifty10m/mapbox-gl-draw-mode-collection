@@ -1,9 +1,10 @@
 {
   "name": "@nifty10m/mapbox-gl-draw-mode-collection",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A custom mode collection for MapboxGL Draw",
   "homepage": "https://nifty10m.github.io/mapbox-gl-draw-mode-collection/",
   "main": "dist/mode-collection.min.js",
+  "files": ["dist/mode-collection.min.js"],
   "scripts": {
     "build": "browserify src/index.js --standalone ModeCollection > dist/mode-collection.min.js && cp -r ./dist ./docs"
   },

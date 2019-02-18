@@ -37,7 +37,7 @@ Mapbox GL Draw Mode Collection
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
-    <script type="text/javascript" src='dist/mode-collection.min.js'></script>
+    <script type="text/javascript" src='https://unpkg.com/@nifty10m/mapbox-gl-draw-mode-collection'></script>
 
     <script type="text/javascript">
       mapboxgl.accessToken = 'pk.eyJ1IjoidGVtcHJhbm92YSIsImEiOiJjaWd0c3M2MW4wOHI2dWNrbzZ5dWo1azVjIn0.x5sm8OjRxO9zO_uUmxYEqg';
@@ -97,7 +97,6 @@ Mapbox GL Draw Mode Collection
 
           document.getElementById('transform-btn').addEventListener('click', function() {
               var features = map.getSource('mode-collection-features')._data.features;
-              console.log(features);
               var featureIds = draw.set({
                   type: 'FeatureCollection',
                   features: features,
