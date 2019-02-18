@@ -6,7 +6,7 @@
   "main": "dist/mode-collection.min.js",
   "files": ["dist/mode-collection.min.js"],
   "scripts": {
-    "build": "browserify src/index.js --standalone ModeCollection > dist/mode-collection.min.js && cp -r ./dist ./docs"
+    "build": "browserify src/index.js --standalone ModeCollection > dist/mode-collection.min.js"
   },
   "author": {
     "name": "Sven Röttering",
