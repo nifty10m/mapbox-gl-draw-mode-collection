@@ -1,6 +1,6 @@
 {
   "name": "@nifty10m/mapbox-gl-draw-mode-collection",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom mode collection for MapboxGL Draw",
   "homepage": "https://nifty10m.github.io/mapbox-gl-draw-mode-collection/",
   "main": "dist/mode-collection.min.js",
@@ -15,7 +15,11 @@
   "license": "MIT",
   "repository": "github:nifty10m/mapbox-gl-draw-mode-collection",
   "bugs": "https://github.com/nifty10m/mapbox-gl-draw-mode-collection/issues",
-  "keywords": ["mapbox-gl-draw", "MapboxDraw", "custom mode"],
+  "keywords": [
+    "mapbox-gl-draw",
+    "MapboxDraw",
+    "custom mode"
+  ],
   "dependencies": {
     "@turf/boolean-clockwise": "^6.0.1",
     "@turf/boolean-point-in-polygon": "^6.0.1",
