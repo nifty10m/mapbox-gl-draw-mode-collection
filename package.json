@@ -1,20 +1,26 @@
 {
-  "name": "mapbox-gl-draw-stamp-mode",
+  "name": "@nifty10m/mapbox-gl-draw-mode-collection",
   "version": "1.0.0",
   "description": "A custom mode for MapboxGL Draw to stamp polygons with a drawn polygon",
   "main": "dist/index.js",
   "scripts": {
-    "build": "browserify src/modes/stamp-mode.js --standalone StampMode > dist/modes/stamp-mode.min.js && cp -r ./dist ./docs"
+    "build": "browserify src/index.js --standalone ModeCollection > dist/mode-collection.min.js && cp -r ./dist ./docs"
   },
   "author": "Sven Röttering",
   "license": "MIT",
-  "repository": "github:nifty10m/mapbox-gl-draw-stamp-mode",
+  "repository": "github:nifty10m/mapbox-gl-draw-mode-collection",
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.1.1",
+    "@turf/boolean-clockwise": "^6.0.1",
+    "@turf/boolean-point-in-polygon": "^6.0.1",
+    "@turf/boolean-within": "^6.0.1",
     "@turf/difference": "^6.0.2",
     "@turf/flatten": "^5.1.5",
     "@turf/helpers": "^6.1.4",
     "@turf/intersect": "^6.1.3",
+    "@turf/kinks": "^6.0.0",
+    "@turf/point-to-line-distance": "^6.0.0",
+    "@turf/polygon-to-linestring": "^5.0.0",
     "@turf/rewind": "^5.1.5",
     "@turf/truncate": "^6.0.1"
   },

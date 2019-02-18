@@ -1,4 +1,2 @@
-Mapbox GL Draw Stamp Mode
+Mapbox GL Draw Mode Collection
 ==========================
-
-This implements a stamp mode in GL Draw. Module is still in active development.
